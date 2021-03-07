@@ -27,6 +27,7 @@ find_package (bson-1.0 1.7 REQUIRED)
 
 add_library(BUTIL_LIB OBJECT ${BUTIL_SOURCES})
 add_library(SOURCES_LIB OBJECT ${SOURCES})
+target_link_libraries(BUTIL_LIB mongo::bson_static)
 target_link_libraries(SOURCES_LIB mongo::bson_static)
 add_dependencies(SOURCES_LIB PROTO_LIB)
 
